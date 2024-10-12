@@ -2,8 +2,11 @@ package br.ifes.projetosistemas.calculadora.view;
 
 import br.ifes.projetosistemas.calculadora.dto.RequestDTO;
 import br.ifes.projetosistemas.calculadora.dto.ResponseDTO;
+import br.ifes.projetosistemas.calculadora.model.operation.IOperation;
+import org.reflections.Reflections;
 
 import java.util.Scanner;
+import java.util.Set;
 
 public class Menu {
 
@@ -26,14 +29,16 @@ public class Menu {
 
     private void showMenu(){
 
-        System.out.println("---->Olá Meu fi!<----");
-        System.out.println("Escolha uma das opção:");
-        System.out.println("1 - Somar");
-        System.out.println("2 - Subtrair");
-        System.out.println("3 - Multiplicar");
-        System.out.println("4 - Dividir");
-        System.out.println("5 - Vá embora ...");
+        Reflections reflections = new Reflections("br.ifes.projetosistemas.calculadora.model.operation");
 
+        Set<Class<? extends IOperation>> classes = reflections.getSubTypesOf(IOperation.class);
+
+        System.out.println("---->Olá Meu fi!<----");
+        System.out.println("Escolha uma das opções:");
+
+        for (Class<? extends IOperation> clazz : classes) {
+            System.out.println("1 - " + clazz.getSimpleName());
+        }
     }
     public void showResult (ResponseDTO responseDTO){
         System.out.println("O Resultado é: "+responseDTO.getResult());
