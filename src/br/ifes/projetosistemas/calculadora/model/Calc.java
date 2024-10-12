@@ -8,5 +8,4 @@ public class Calc implements ICalc{
 
         return operation.calc(value1,value2);
     }
-
 }

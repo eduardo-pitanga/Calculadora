@@ -8,5 +8,4 @@ public class CalcX implements ICalc{
         System.out.println("XXXX");
         return operation.calc(value1,value2);
     }
-
 }

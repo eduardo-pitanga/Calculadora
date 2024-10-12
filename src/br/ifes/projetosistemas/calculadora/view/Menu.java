@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class Menu {
 
-
     public RequestDTO show(){
         this.showMenu();
         return this.captureValues();
@@ -16,7 +15,7 @@ public class Menu {
     private RequestDTO captureValues (){
 
         Scanner input = new Scanner(System.in);
-        int opcao = input.nextInt();
+        String opcao = input.nextLine();
         System.out.println("Informe o primeiro valor:");
         int valor1 = input.nextInt();
         System.out.println("Informe o segundo valor:");
@@ -36,10 +35,7 @@ public class Menu {
         System.out.println("5 - Vá embora ...");
 
     }
-
     public void showResult (ResponseDTO responseDTO){
         System.out.println("O Resultado é: "+responseDTO.getResult());
     }
-
-
 }

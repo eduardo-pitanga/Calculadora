@@ -15,7 +15,4 @@ public class ResponseDTO {
     public ResponseDTO(int result) {
         this.result = result;
     }
-
-
-
 }

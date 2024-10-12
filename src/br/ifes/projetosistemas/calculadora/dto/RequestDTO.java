@@ -2,11 +2,11 @@ package br.ifes.projetosistemas.calculadora.dto;
 
 public class RequestDTO {
 
-    public int getOpcao() {
+    public String getOpcao() {
         return opcao;
     }
 
-    public void setOpcao(int opcao) {
+    public void setOpcao(String opcao) {
         this.opcao = opcao;
     }
 
@@ -26,15 +26,12 @@ public class RequestDTO {
         this.valor2 = valor2;
     }
 
-    private int opcao;
+    private String opcao;
     private int valor1;
     private int valor2;
-    public RequestDTO(int opcao, int valor1, int valor2) {
+    public RequestDTO(String opcao, int valor1, int valor2) {
         this.opcao = opcao;
         this.valor1 = valor1;
         this.valor2 = valor2;
     }
-
-
-
 }
